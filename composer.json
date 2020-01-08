@@ -1,0 +1,31 @@
+{
+    "name": "confrariaweb/laravel-schedule",
+    "description": "Task scheduling package",
+    "keywords": [
+        "schedule",
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Rafael Zingano",
+            "email": "confrariaweb@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ConfrariaWeb\\Schedule\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ConfrariaWeb\\Schedule\\Providers\\ScheduleServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
