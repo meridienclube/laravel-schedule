@@ -15,7 +15,12 @@ class ScheduleServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../Views', 'vendor');
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadMigrationsFrom(__DIR__ . '/../Databases/Migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/../Translations', 'schedule');
+        $this->loadViewsFrom(__DIR__ . '/../Views', 'schedule');
+        $this->publishes([__DIR__ . '/../../config/cw_schedule.php' => config_path('cw_schedule.php')], 'cw_schedule');
+
     }
 
     public function register()
