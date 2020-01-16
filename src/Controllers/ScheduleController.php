@@ -100,7 +100,7 @@ class ScheduleController extends Controller
         $this->data[Str::plural($schedule->where)] = resolve(Str::studly($schedule->where) . 'Service')->pluck();
 
         $this->data['task_types'] = resolve('TaskTypeService')->pluck();
-        $this->data['statuses'] = Auth::user()->roleTasksStatuses->pluck('name', 'id');
+        $this->data['statuses'] = resolve('TaskStatusService')->all()->pluck(); //Auth::user()->roleTasksStatuses->pluck('name', 'id');
         $this->data['employees'] = resolve('UserService')->employees()->pluck('name', 'id')->union(['this' => 'Eu mesmo', 'self' => 'O próprio']);
         $this->data['responsibles'] = resolve('UserService')->employees()->pluck('name', 'id')->union(['this' => 'Eu mesmo', 'self' => 'O próprio']);
         $this->data['associates'] = resolve('UserService')->associates()->pluck('name', 'id')->union(['this' => 'Eu mesmo', 'self' => 'O próprio']);
