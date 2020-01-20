@@ -2,11 +2,11 @@
 
 namespace ConfrariaWeb\Schedule\Repositories;
 
-use ConfrariaWeb\Schedule\Contracts\ScheduleFrequencyOptionContract;
+use ConfrariaWeb\Schedule\Contracts\ScheduleFrequencyContract;
 use ConfrariaWeb\Schedule\Models\ScheduleFrequencyOption;
 use ConfrariaWeb\Vendor\Traits\RepositoryTrait;
 
-class ScheduleFrequencyOptionRepository implements ScheduleFrequencyOptionContract
+class ScheduleFrequencyRepository implements ScheduleFrequencyContract
 {
 
     Use RepositoryTrait;

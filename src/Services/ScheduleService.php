@@ -149,7 +149,7 @@ class ScheduleService
 
     public function data($where = null)
     {
-        $data = config('erp.schedule');
+        $data = config('cw_schedule');
 
         $data['users'] = resolve('UserService')
             ->pluck()

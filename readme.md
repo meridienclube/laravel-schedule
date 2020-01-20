@@ -1,10 +1,6 @@
-# Package Vendor Laravel
+# Package Schedule Laravel
 
-Base package for all other laravel packages
-
-## layouts
-
-Include for icon usage the following google library <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+Laravel scheduling package
 
 ## License
 

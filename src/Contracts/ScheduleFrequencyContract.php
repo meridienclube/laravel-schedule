@@ -2,7 +2,7 @@
 
 namespace ConfrariaWeb\Schedule\Contracts;
 
-interface ScheduleFrequencyOptionContract
+interface ScheduleFrequencyContract
 {
 
     public function all();
