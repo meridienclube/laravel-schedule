@@ -14,7 +14,9 @@
             "email": "confrariaweb@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "confrariaweb/laravel-schedule-create-task": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "ConfrariaWeb\\Schedule\\": "src"

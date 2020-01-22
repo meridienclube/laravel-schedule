@@ -2,6 +2,8 @@
 
 namespace ConfrariaWeb\Schedule\Controllers;
 
+use ConfrariaWeb\Schedule\Requests\StoreScheduleRequest;
+use ConfrariaWeb\Schedule\Requests\UpdateScheduleRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -31,20 +33,16 @@ class ScheduleController extends Controller
         return view(config('cw_schedule.views') . 'schedules.index', $this->data);
     }
 
-    public function create($page = 1)
+    public function create()
     {
         $this->data = resolve('ScheduleService')->data();
-        $this->data['page'] = $page;
-        $this->data['task_types'] = resolve('TaskTypeService')->pluck();
-        $this->data['forms'] = 'schedules.forms.form';
-
         return view(config('cw_schedule.views') . 'schedules.create', $this->data);
     }
 
-    public function store(Request $request)
+    public function store(StoreScheduleRequest $request)
     {
         $data = $request->all();
-        $data['user_id'] = $data['user_id']?? Auth::id();
+        $data['user_id'] = $data['user_id'] ?? Auth::id();
         $schedule = resolve('ScheduleService')->create($data);
         return redirect()
             ->route('admin.schedules.edit', $schedule->id)
@@ -86,7 +84,7 @@ class ScheduleController extends Controller
      * @param int $id
      * @return \Illuminate\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateScheduleRequest $request, $id)
     {
         $schedule = resolve('ScheduleService')->update($request->all(), $id);
         return redirect()

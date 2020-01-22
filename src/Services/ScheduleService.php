@@ -4,6 +4,7 @@ namespace ConfrariaWeb\Schedule\Services;
 
 use ConfrariaWeb\Schedule\Contracts\ScheduleContract;
 use ConfrariaWeb\Vendor\Traits\ServiceTrait;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class ScheduleService
@@ -91,7 +92,7 @@ class ScheduleService
 
     public function execute($schedule, $obj)
     {
-        $objService = resolve("\MeridienClube\Meridien\Services\Schedule\\" . Str::studly($schedule->what) . "Service")->execute($schedule, $obj);
+        $objService = resolve("Schedule" . Str::studly($schedule->what) . "Service")->execute($schedule, $obj);
     }
 
     protected function rules($rules, $obj, $content = null, $return = true)

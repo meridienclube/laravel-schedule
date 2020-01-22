@@ -7,7 +7,6 @@ return [
     'what_list' => [
         'create_task' => 'Criar Tarefa',
         'create_user' => 'Criar Pessoa',
-        'edit_user' => 'Editar Pessoa',
         'send_email' => 'Enviar Email',
         'send_notification' => 'Enviar Notificação'
     ],
