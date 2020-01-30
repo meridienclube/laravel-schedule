@@ -6,13 +6,9 @@ return [
 
     'what_list' => [
         'create_task' => 'Criar Tarefa',
-        'create_user' => 'Criar Pessoa',
-        'send_email' => 'Enviar Email',
-        'send_notification' => 'Enviar Notificação'
     ],
     'where_list' => [
         'user' => 'Usuários',
-        'task' => 'Tarefas'
     ],
     'when_list' => [
         //'retrieved' => 'Depois que um registro foi recuperado',
@@ -21,20 +17,20 @@ return [
         //'updating' => 'Antes de um registro ser atualizado',
         'updated' => 'Depois que um registro foi atualizado',
         //'saving' => 'Antes que um registro seja salvo (criado ou atualizado)',
-        'saved' => 'Depois que um registro foi salvo (criado ou atualizado)',
+        //'saved' => 'Depois que um registro foi salvo (criado ou atualizado)',
         //'deleting' => 'Antes de um registro ser deletado',
-        'deleted' => 'Depois de um registro ser deletado',
+        //'deleted' => 'Depois de um registro ser deletado',
         //'restoring' => 'Antes que um registro deletado seja restaurado (soft-deleted)',
         //'restored' => 'Depois que um registro deletado foi restaurado (soft-deleted)'
     ],
     'type_list' => [
         'synchronous' => 'Síncrono',
-        'scheduled' => 'Agendamento'
+        //'scheduled' => 'Agendamento'
     ],
     'when_fields' => [
         'name' => 'Nome',
         'email' => 'E-mail',
-        'type_id' => 'ID tipo de tarefa',
+        //'type_id' => 'ID tipo de tarefa',
         'status_id' => 'Status'
     ],
     'when_ifs' => [

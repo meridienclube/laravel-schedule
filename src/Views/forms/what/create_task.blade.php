@@ -50,7 +50,7 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="control-label">Status</label>
-                {{ Form::select2('options[task][status_id]', [], [], ['id' => 'option_task_status_id', 'class' => 'form-control'], ['server_side' => ['route' => 'api.tasks.status.select2']]) }}
+                {{ Form::select2('options[task][status_id]', [], [], ['id' => 'option_task_status_id', 'class' => 'form-control'], ['server_side' => ['route' => 'api.tasks.statuses.select2']]) }}
             </div>
             <div class="form-group col-md-6">
                 <label class="control-label">Prioridade</label>

@@ -19,14 +19,6 @@ class ScheduleController extends Controller
         $this->data = [];
     }
 
-    public function storeComment(Request $request, $schedule_id)
-    {
-        $schedule = resolve('ScheduleService')->createComment($request->all(), $schedule_id);
-        return redirect()
-            ->route('schedules.show', ['id' => $schedule_id])
-            ->with('status', 'Comentário inserido com sucesso!');
-    }
-
     public function index()
     {
         $this->data['schedules'] = resolve('ScheduleService')->all();
