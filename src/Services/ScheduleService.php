@@ -92,7 +92,8 @@ class ScheduleService
 
     public function execute($schedule, $obj)
     {
-        $objService = resolve("Schedule" . Str::studly($schedule->what) . "Service")->execute($schedule, $obj);
+        $serviceStr = "Schedule" . Str::studly($schedule->what) . "Service";
+        $objService = resolve($serviceStr)->execute($schedule, $obj);
     }
 
     protected function rules($rules, $obj, $content = null, $return = true)
@@ -156,7 +157,7 @@ class ScheduleService
             ->pluck()
             //->prepend('Eu mesmo', Auth::id())
             ->prepend('Escolha uma pessoa', NULL)
-        ->prepend('O próprio', 'this');
+            ->prepend('O próprio', 'this');
 
         $data['when_fields'] = resolve('OptionService')->pluck()
             ->prepend('Escolha', '')->mapWithKeys(function ($item, $key) {

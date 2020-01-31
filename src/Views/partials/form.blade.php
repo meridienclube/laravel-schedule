@@ -13,8 +13,7 @@
         <div class="form-group">
             <label class="control-label">Tipo de ação <span class="required"> * </span></label>
             {{ Form::select('type',  $type_list, isset($schedule)? $schedule->type : null, ['class' => 'form-control kt-select2']) }}
-            <small class="float-right">Isso sera um agendamento periodico ou sera ativado logo apos alguma ação do
-                usuario?</small>
+            <small class="float-right">Isso sera um agendamento periodico ou sera ativado logo apos alguma ação do usuario?</small>
         </div>
         <div class="form-group">
             <label class="control-label">O que <span class="required"> * </span></label>
@@ -32,18 +31,14 @@
             @includeIf('schedule::forms.' . $schedule->type . '.when')
             @includeIf('schedule::forms.where.' . Str::snake($schedule->where))
             @includeIf('schedule::forms.' . $schedule->type . '.where_' . Str::snake($schedule->where))
-            @includeIf('schedule::forms.what.' . Str::snake($schedule->what))
-            @includeIf('schedule::forms.' . $schedule->type . '.what_' . Str::snake($schedule->what))
+            @includeIf('schedule_' . Str::snake($schedule->what) . '::forms.' . Str::snake($schedule->what))
         @endif
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="form__actions float-right">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="{{ route('admin.schedules.index') }}" class="btn btn-secondary">Cancelar</a>
-        </div>
+    <div class="col-12">
+        @include('vendor::partials.buttons_form')
     </div>
 </div>
 
