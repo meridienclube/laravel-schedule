@@ -1,5 +1,6 @@
 {
     "name": "confrariaweb/laravel-schedule",
+    "version": "dev-master",
     "description": "Task scheduling package",
     "keywords": [
         "schedule",
