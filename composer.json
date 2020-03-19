@@ -1,5 +1,5 @@
 {
-    "name": "confrariaweb/laravel-schedule",
+    "name": "meridienclube/laravel-schedule",
     "version": "dev-master",
     "description": "Task scheduling package",
     "keywords": [
@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "confrariaweb/laravel-schedule-create-task": "dev-master"
+        "meridienclube/laravel-schedule-create-task": "dev-master"
     },
     "autoload": {
         "psr-4": {
